@@ -1,9 +1,13 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println(fineApproach("shubham jadhav"));
+        System.out.println(firstRepeatCharacter("green apple"));
+        System.out.println(firstrepeatedcharacterUsingSets("shubham jadhav."));
     }
 
 
@@ -48,4 +52,45 @@ public class Main {
         }
         return result;
     }
+
+
+    public static void printTheHashMap(Map<String, Integer> integerStringHashMap) {
+        System.out.println(integerStringHashMap.toString());
+    }
+
+
+    public static String firstRepeatCharacter(String string) {
+
+        String[] stringArray = string.split("");
+        Map<String, Integer> hashMap = new HashMap<>();
+        String result = "";
+        for (String item : stringArray) {
+            if (!hashMap.keySet().contains(item)) {
+                hashMap.put(item, 1);
+                continue;
+            }
+            hashMap.put(item, hashMap.get(item) + 1);
+            result = item;
+            break;
+        }
+        return result;
+    }
+
+
+    public static String firstrepeatedcharacterUsingSets(String inputString) {
+        String[] array = inputString.split("");
+        Set<String> hashSet = new HashSet<>();
+        int size = 0;
+        String result="";
+        for (String element : array) {
+            hashSet.add(element);
+            size += 1;
+            if(hashSet.size()<size){
+                result=element;
+                break;
+            }
+        }
+        return result;
+    }
+
 }
