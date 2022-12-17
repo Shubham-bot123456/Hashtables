@@ -8,6 +8,16 @@ public class Main {
         System.out.println(fineApproach("shubham jadhav"));
         System.out.println(firstRepeatCharacter("green apple"));
         System.out.println(firstrepeatedcharacterUsingSets("shubham jadhav."));
+        HashTables hashTables = new HashTables();
+        hashTables.put(1, "something");
+        System.out.println(hashTables.get(1));
+        hashTables.put(101,"something else");
+        System.out.println(hashTables.get(101));
+        System.out.println(hashTables.array[1]);
+        hashTables.put(201,"shubham Jadhav");
+        System.out.println(hashTables.array[1]);
+        hashTables.put(201,"shreyassh Jadhav");
+        System.out.println(hashTables.array[1]);
     }
 
 
@@ -81,12 +91,12 @@ public class Main {
         String[] array = inputString.split("");
         Set<String> hashSet = new HashSet<>();
         int size = 0;
-        String result="";
+        String result = "";
         for (String element : array) {
             hashSet.add(element);
             size += 1;
-            if(hashSet.size()<size){
-                result=element;
+            if (hashSet.size() < size) {
+                result = element;
                 break;
             }
         }
