@@ -18,6 +18,8 @@ public class Main {
         System.out.println(hashTables.array[1]);
         hashTables.put(201,"shreyassh Jadhav");
         System.out.println(hashTables.array[1]);
+        System.out.println(hashTables.remove(201));
+        System.out.println(hashTables.array[1]);
     }
 
 

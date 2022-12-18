@@ -30,9 +30,6 @@ public class HashTables {
 
        Node node=new Node(key, value);
        linkedList.add(node);
-
-
-
     }
 
 
@@ -50,6 +47,19 @@ public class HashTables {
                 return node.value;
         }
         return "notfound";
+    }
+
+   //this is the remove method for hashtables
+    public Node remove(int key){
+        int index=hashFunction(key);
+        for(Object object:array[index]){
+            Node node=(Node) object;
+            if(node.key==key){
+                array[index].remove(node);
+                return node;
+            }
+        }
+        throw new IllegalStateException("Not found");
     }
 
 
